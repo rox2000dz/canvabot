@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الاقتراحات - Honesty City NetWork</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop id="myVideo">
+            <source src="https://r2.guns.lol/cb5f1c13-d65e-48a3-bd76-15bf7cb3fa19.mov" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="music-player">
+        <button id="musicToggle" class="music-btn">
+            <i class="fas fa-music"></i>
+            <audio id="bgMusic" loop>
+                <source src="https://r2.guns.lol/23e0aed5-ee3e-414d-88ed-bd582e3fdb52.mp3" type="audio/mp3">
+            </audio>
+        </button>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="store.html">المتجر</a></li>
+            <li><a href="admin-apply.html">تقديم الرقابة الإدارية</a></li>
+            <li><a href="terms.html">الشروط والأحكام</a></li>
+            <li><a href="suggestions.html">الاقتراحات</a></li>
+            <li><a href="profile.html">حسابي الشخصي</a></li>
+        </ul>
+    </nav>
+
+    <main class="suggestions-page">
+        <div id="loginSection" class="login-section">
+            <h2>يجب تسجيل الدخول لإرسال اقتراح</h2>
+            <button onclick="loginWithDiscord()" class="discord-login-btn">
+                <i class="fab fa-discord"></i>
+                تسجيل الدخول باستخدام Discord
+            </button>
+        </div>
+
+        <div id="suggestionFormSection" class="suggestions-form" style="display: none;">
+            <div class="user-info">
+                <img id="userAvatar" src="" alt="صورة المستخدم" class="user-avatar">
+                <span id="userName"></span>
+                <span id="countdown" class="countdown"></span>
+            </div>
+            <form id="suggestionForm" onsubmit="submitSuggestion(event)">
+                <div class="form-group">
+                    <label for="title">عنوان الاقتراح</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">شرح الاقتراح</label>
+                    <textarea id="description" name="description" rows="6" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">إرسال الاقتراح</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>تواصل معنا</p>
+        <a href="https://discord.gg/" class="discord-button">Discord</a>
+    </footer>
+
+    <div class="toast-container"></div>
+
+</body>
+</html> 
